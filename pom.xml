@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ejercicio</groupId>
-    <artifactId>AutoresDB</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>ejercicio1-existdb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>AutoresDB - Ejercicio XQuery con BaseX</name>
-
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <!-- BaseX Client API -->
-        <dependency>
-            <groupId>org.basex</groupId>
-            <artifactId>basex</artifactId>
-            <version>10.7</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <!-- Plugin para ejecutar: mvn exec:java -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <mainClass>com.ejercicio.AutoresDBApp</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
     <repositories>
         <repository>
-            <id>basex-repo</id>
-            <name>BaseX Maven Repository</name>
-            <url>https://files.basex.org/maven</url>
+            <id>exist-db</id>
+            <url>https://repo.evolvedbinary.com/repository/exist-db-releases/</url>
         </repository>
     </repositories>
 
+    <dependencies>
+        <!-- Cliente XML:DB para eXist-db -->
+        <dependency>
+            <groupId>org.exist-db</groupId>
+            <artifactId>exist-core</artifactId>
+            <version>6.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+        </dependency>
+    </dependencies>
 </project>
